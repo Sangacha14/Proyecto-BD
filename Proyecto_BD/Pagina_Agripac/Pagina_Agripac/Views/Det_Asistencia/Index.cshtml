@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Pagina_Agripac.Det_Asistencia>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Detalle Asistencia</h2>
+<p>
+    @Html.ActionLink("Crear Registro", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Mes_Completo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dias_Inasistidos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reporte_Asistencia.Comprobante)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mes_Completo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dias_Inasistidos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reporte_Asistencia.Comprobante)
+            </td>
+            <td>
+                @Html.ActionLink("✏", "Edit", new { id = item.id_det_asistencia }) |
+                @Html.ActionLink("👀", "Details", new { id = item.id_det_asistencia }) |
+                @Html.ActionLink("❌", "Delete", new { id = item.id_det_asistencia })
+            </td>
+        </tr>
+    }
+
+</table>
+

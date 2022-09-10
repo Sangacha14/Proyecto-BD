@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Pagina_Agripac.Det_Utilidades>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Detalle Utilidades</h2>
+
+<p>
+    @Html.ActionLink("Crear Registro", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+                @Html.DisplayNameFor(model => model.Carga_Familiar)
+        </th>
+        <th>
+                @Html.DisplayNameFor(model => model.Dias_laborados)
+        </th>
+        <th>
+                @Html.DisplayNameFor(model => model.Utilidades.Comprobante)
+        </th>
+        <th></th>
+    </tr>
+    
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Carga_Familiar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dias_laborados)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Utilidades.Comprobante)
+            </td>
+            <td>
+                @Html.ActionLink("✏", "Edit", new { id=item.id_det_utilidades }) |
+                @Html.ActionLink("👀", "Details", new { id=item.id_det_utilidades }) |
+                @Html.ActionLink("❌", "Delete", new { id=item.id_det_utilidades })
+            </td>
+        </tr>
+ }
+    
+</table>
+

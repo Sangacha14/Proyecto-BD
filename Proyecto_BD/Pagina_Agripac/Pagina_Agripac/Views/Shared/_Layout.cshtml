@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agripac</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg bg-success navbar-fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="~/recursos/img/logo_agripac.png" alt="Logo de agripac" width="50" height="40" />
+                </a>
+                <a class="navbar-brand" href="#">Agripac S.A</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="https://localhost:44323/">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Accion
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Agregar Cargo", "Index", "Cargoes")</li>
+                                <li>@Html.ActionLink("Agregar Departamento", "Index", "Departamentoes")</li>
+                                <li>@Html.ActionLink("Agregar Sueldo", "Index", "Sueldoes")</li>
+                                <li>@Html.ActionLink("Agregar Empleado", "Index", "Empleadoes")</li>
+                                <li>@Html.ActionLink("Agregar Motivo", "Index", "Motivo_Asistencia")</li>
+                                <li>@Html.ActionLink("Agregar Jornada", "Index", "Jornadas")</li>
+                                <li>@Html.ActionLink("Agregar Horario", "Index", "Horarios")</li>
+                                <li>@Html.ActionLink("Agregar Detalle Horario", "Index", "Det_Horario1")</li>
+                                <li>@Html.ActionLink("Agregar Nomina", "Index", "Cabecera_Nomina")</li>
+                                <li>@Html.ActionLink("Agregar Detalle Nomina", "Index", "DETALLE_NOMINA")</li>
+                                <li>@Html.ActionLink("Agregar Asistencia", "Index", "Reporte_Asistencia")</li>
+                                <li>@Html.ActionLink("Agregar Detalle Asistencia", "Index", "Det_Asistencia")</li>
+                                <li>@Html.ActionLink("Agregar Utilidades", "Index", "Utilidades")</li>
+                                <li>@Html.ActionLink("Agregar Detalle Utilidades", "Index", "Det_Utilidades")</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Grupo A Derechos de autor</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

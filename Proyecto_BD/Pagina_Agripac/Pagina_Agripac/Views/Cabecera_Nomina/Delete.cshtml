@@ -1,0 +1,74 @@
+﻿@model Pagina_Agripac.Cabecera_Nomina
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Esta seguro de elimnar Nomina?</h3>
+<div>
+    <h4>Cabecera_Nomina</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Comprobante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comprobante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Iess_por)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Iess_por)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Periodo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Periodo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleado.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleado.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sueldo.idSueldo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sueldo.idSueldo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar", "Index")
+        </div>
+    }
+</div>
+

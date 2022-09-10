@@ -1,0 +1,50 @@
+﻿@model Pagina_Agripac.Det_Utilidades
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Consulta Detalle Utilidades</h2>
+<div>
+    <h4>Detalle Utilidades</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Carga_Familiar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Carga_Familiar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dias_laborados)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dias_laborados)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Utilidades.Comprobante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Utilidades.Comprobante)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id_det_utilidades }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>
+

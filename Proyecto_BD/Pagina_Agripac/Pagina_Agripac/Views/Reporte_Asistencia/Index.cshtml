@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Pagina_Agripac.Reporte_Asistencia>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Reporte de Asistencia</h2>
+<p>
+    @Html.ActionLink("Crear Reporte de Asistencia", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Comprobante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Periodo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleado.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Motivo_Asistencia.Motivo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comprobante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Periodo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Empleado.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Motivo_Asistencia.Motivo)
+            </td>
+            <td>
+                @Html.ActionLink("✏", "Edit", new { id = item.id_asistencia }) |
+                @Html.ActionLink("👀", "Details", new { id = item.id_asistencia }) |
+                @Html.ActionLink("❌", "Delete", new { id = item.id_asistencia })
+            </td>
+        </tr>
+    }
+
+</table>
+

@@ -1,0 +1,66 @@
+﻿@model Pagina_Agripac.Utilidades
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Consulta de Registro de Utilidades</h2>
+<div>
+    <h4>Utilidades</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Comprobante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comprobante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor_Utilidades)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor_Utilidades)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_pago)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_pago)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleado.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleado.Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id_utilidades }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>
+

@@ -1,0 +1,57 @@
+﻿@model Pagina_Agripac.Det_Horario
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Eliminar</h2>
+<h3>Esta seguro que desea eliminar este registro?</h3>
+<div>
+    <h4>Det_Horario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_inicial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_inicial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_final)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_final)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Horario.Comprobante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Horario.Comprobante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Jornada.Jornada1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Jornada.Jornada1)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar", "Index")
+        </div>
+    }
+</div>
+

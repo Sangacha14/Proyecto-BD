@@ -1,0 +1,26 @@
+﻿@model Pagina_Agripac.Jornada
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Consulta Registro Jornadas</h2>
+
+<div>
+    <h4>Jornada</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Jornada1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Jornada1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id_jornada }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

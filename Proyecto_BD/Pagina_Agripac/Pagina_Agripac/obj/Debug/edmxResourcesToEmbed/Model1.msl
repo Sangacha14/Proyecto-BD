@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AgripacModelStoreContainer" CdmEntityContainer="AgripacEntities">
+    <EntitySetMapping Name="Cabecera_Nomina">
+      <EntityTypeMapping TypeName="AgripacModel.Cabecera_Nomina">
+        <MappingFragment StoreEntitySet="Cabecera_Nomina">
+          <ScalarProperty Name="id_Nomina" ColumnName="id_Nomina" />
+          <ScalarProperty Name="Comprobante" ColumnName="Comprobante" />
+          <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
+          <ScalarProperty Name="idSueldo" ColumnName="idSueldo" />
+          <ScalarProperty Name="Iess_por" ColumnName="Iess_por" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cargo">
+      <EntityTypeMapping TypeName="AgripacModel.Cargo">
+        <MappingFragment StoreEntitySet="Cargo">
+          <ScalarProperty Name="id_cargo" ColumnName="id_cargo" />
+          <ScalarProperty Name="Cargo1" ColumnName="Cargo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departamento">
+      <EntityTypeMapping TypeName="AgripacModel.Departamento">
+        <MappingFragment StoreEntitySet="Departamento">
+          <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
+          <ScalarProperty Name="id_cargo" ColumnName="id_cargo" />
+          <ScalarProperty Name="Departamento1" ColumnName="Departamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Det_Asistencia">
+      <EntityTypeMapping TypeName="AgripacModel.Det_Asistencia">
+        <MappingFragment StoreEntitySet="Det_Asistencia">
+          <ScalarProperty Name="id_det_asistencia" ColumnName="id_det_asistencia" />
+          <ScalarProperty Name="id_asistencia" ColumnName="id_asistencia" />
+          <ScalarProperty Name="Mes_Completo" ColumnName="Mes_Completo" />
+          <ScalarProperty Name="Dias_Inasistidos" ColumnName="Dias_Inasistidos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Det_Horario">
+      <EntityTypeMapping TypeName="AgripacModel.Det_Horario">
+        <MappingFragment StoreEntitySet="Det_Horario">
+          <ScalarProperty Name="id_det_horario" ColumnName="id_det_horario" />
+          <ScalarProperty Name="id_horario" ColumnName="id_horario" />
+          <ScalarProperty Name="id_jornada" ColumnName="id_jornada" />
+          <ScalarProperty Name="Fecha_inicial" ColumnName="Fecha_inicial" />
+          <ScalarProperty Name="Fecha_final" ColumnName="Fecha_final" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Det_Utilidades">
+      <EntityTypeMapping TypeName="AgripacModel.Det_Utilidades">
+        <MappingFragment StoreEntitySet="Det_Utilidades">
+          <ScalarProperty Name="id_det_utilidades" ColumnName="id_det_utilidades" />
+          <ScalarProperty Name="id_utilidades" ColumnName="id_utilidades" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Carga_Familiar" ColumnName="Carga_Familiar" />
+          <ScalarProperty Name="Dias_laborados" ColumnName="Dias_laborados" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DETALLE_NOMINA">
+      <EntityTypeMapping TypeName="AgripacModel.DETALLE_NOMINA">
+        <MappingFragment StoreEntitySet="DETALLE_NOMINA">
+          <ScalarProperty Name="id_det_nomina" ColumnName="id_det_nomina" />
+          <ScalarProperty Name="id_Nomina" ColumnName="id_Nomina" />
+          <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleado">
+      <EntityTypeMapping TypeName="AgripacModel.Empleado">
+        <MappingFragment StoreEntitySet="Empleado">
+          <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
+          <ScalarProperty Name="id_cargo" ColumnName="id_cargo" />
+          <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Horario">
+      <EntityTypeMapping TypeName="AgripacModel.Horario">
+        <MappingFragment StoreEntitySet="Horario">
+          <ScalarProperty Name="id_horario" ColumnName="id_horario" />
+          <ScalarProperty Name="Comprobante" ColumnName="Comprobante" />
+          <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jornada">
+      <EntityTypeMapping TypeName="AgripacModel.Jornada">
+        <MappingFragment StoreEntitySet="Jornada">
+          <ScalarProperty Name="id_jornada" ColumnName="id_jornada" />
+          <ScalarProperty Name="Jornada1" ColumnName="Jornada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Motivo_Asistencia">
+      <EntityTypeMapping TypeName="AgripacModel.Motivo_Asistencia">
+        <MappingFragment StoreEntitySet="Motivo_Asistencia">
+          <ScalarProperty Name="idMotivo_Asistencia" ColumnName="idMotivo_Asistencia" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reporte_Asistencia">
+      <EntityTypeMapping TypeName="AgripacModel.Reporte_Asistencia">
+        <MappingFragment StoreEntitySet="Reporte_Asistencia">
+          <ScalarProperty Name="id_asistencia" ColumnName="id_asistencia" />
+          <ScalarProperty Name="Comprobante" ColumnName="Comprobante" />
+          <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
+          <ScalarProperty Name="idMotivo_Asistencia" ColumnName="idMotivo_Asistencia" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sueldo">
+      <EntityTypeMapping TypeName="AgripacModel.Sueldo">
+        <MappingFragment StoreEntitySet="Sueldo">
+          <ScalarProperty Name="idSueldo" ColumnName="idSueldo" />
+          <ScalarProperty Name="id_cargo" ColumnName="id_cargo" />
+          <ScalarProperty Name="Sueldo1" ColumnName="Sueldo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Utilidades">
+      <EntityTypeMapping TypeName="AgripacModel.Utilidades">
+        <MappingFragment StoreEntitySet="Utilidades">
+          <ScalarProperty Name="id_utilidades" ColumnName="id_utilidades" />
+          <ScalarProperty Name="Comprobante" ColumnName="Comprobante" />
+          <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Valor_Utilidades" ColumnName="Valor_Utilidades" />
+          <ScalarProperty Name="Fecha_pago" ColumnName="Fecha_pago" />
+          <ScalarProperty Name="Anio" ColumnName="Anio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

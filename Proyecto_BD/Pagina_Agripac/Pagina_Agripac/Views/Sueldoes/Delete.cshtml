@@ -1,0 +1,40 @@
+﻿@model Pagina_Agripac.Sueldo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Estas seguro que deseas eliminar este registro?</h3>
+<div>
+    <h4>Sueldo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Sueldo1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sueldo1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cargo.Cargo1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cargo.Cargo1)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Registro", "Index")
+        </div>
+    }
+</div>

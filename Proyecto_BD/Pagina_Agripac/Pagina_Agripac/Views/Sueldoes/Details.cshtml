@@ -1,0 +1,34 @@
+﻿@model Pagina_Agripac.Sueldo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Consulta Registro Sueldo</h2>
+
+<div>
+    <h4>Sueldo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Sueldo1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sueldo1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cargo.Cargo1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cargo.Cargo1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idSueldo }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

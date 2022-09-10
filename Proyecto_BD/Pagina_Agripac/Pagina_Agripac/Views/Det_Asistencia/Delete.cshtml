@@ -1,0 +1,49 @@
+﻿@model Pagina_Agripac.Det_Asistencia
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Eliminar Detalle Asistencia</h2>
+<h3>Esta seguro que desea eliminar este registro?</h3>
+<div>
+    <h4>Det_Asistencia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Mes_Completo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mes_Completo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dias_Inasistidos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dias_Inasistidos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reporte_Asistencia.Comprobante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reporte_Asistencia.Comprobante)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar", "Index")
+        </div>
+    }
+</div>
+

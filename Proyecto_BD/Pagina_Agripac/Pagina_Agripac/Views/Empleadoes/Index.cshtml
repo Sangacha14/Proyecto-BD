@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Pagina_Agripac.Empleado>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Empleados</h2>
+
+<p>
+    @Html.ActionLink("Crear Registro", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cargo.Cargo1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departamento.Departamento1)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cargo.Cargo1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departamento.Departamento1)
+        </td>
+        <td>
+            @Html.ActionLink("✏", "Edit", new { id=item.id_empleado }) |
+            @Html.ActionLink("👀", "Details", new { id=item.id_empleado }) |
+            @Html.ActionLink("❌", "Delete", new { id=item.id_empleado })
+        </td>
+    </tr>
+}
+
+</table>

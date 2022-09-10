@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AgripacModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cabecera_Nomina">
+    <Key>
+      <PropertyRef Name="id_Nomina" />
+    </Key>
+    <Property Name="id_Nomina" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Comprobante" Type="nvarchar" MaxLength="255" />
+    <Property Name="id_empleado" Type="int" Nullable="false" />
+    <Property Name="idSueldo" Type="int" Nullable="false" />
+    <Property Name="Iess_por" Type="float" />
+    <Property Name="Fecha" Type="date" />
+    <Property Name="Periodo" Type="int" />
+  </EntityType>
+  <EntityType Name="Cargo">
+    <Key>
+      <PropertyRef Name="id_cargo" />
+    </Key>
+    <Property Name="id_cargo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cargo" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Departamento">
+    <Key>
+      <PropertyRef Name="idDepartamento" />
+    </Key>
+    <Property Name="idDepartamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_cargo" Type="int" Nullable="false" />
+    <Property Name="Departamento" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Det_Asistencia">
+    <Key>
+      <PropertyRef Name="id_det_asistencia" />
+    </Key>
+    <Property Name="id_det_asistencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_asistencia" Type="int" Nullable="false" />
+    <Property Name="Mes_Completo" Type="varchar" MaxLength="255" />
+    <Property Name="Dias_Inasistidos" Type="int" />
+  </EntityType>
+  <EntityType Name="Det_Horario">
+    <Key>
+      <PropertyRef Name="id_det_horario" />
+    </Key>
+    <Property Name="id_det_horario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_horario" Type="int" Nullable="false" />
+    <Property Name="id_jornada" Type="int" Nullable="false" />
+    <Property Name="Fecha_inicial" Type="date" />
+    <Property Name="Fecha_final" Type="date" />
+  </EntityType>
+  <EntityType Name="Det_Utilidades">
+    <Key>
+      <PropertyRef Name="id_det_utilidades" />
+    </Key>
+    <Property Name="id_det_utilidades" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_utilidades" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="255" />
+    <Property Name="Carga_Familiar" Type="varchar" MaxLength="255" />
+    <Property Name="Dias_laborados" Type="int" />
+  </EntityType>
+  <EntityType Name="DETALLE_NOMINA">
+    <Key>
+      <PropertyRef Name="id_det_nomina" />
+    </Key>
+    <Property Name="id_det_nomina" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_Nomina" Type="int" Nullable="false" />
+    <Property Name="id_empleado" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="date" />
+    <Property Name="Periodo" Type="int" />
+  </EntityType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="id_empleado" />
+    </Key>
+    <Property Name="id_empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_cargo" Type="int" Nullable="false" />
+    <Property Name="idDepartamento" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="255" />
+    <Property Name="Apellido" Type="varchar" MaxLength="255" />
+    <Property Name="Correo" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Horario">
+    <Key>
+      <PropertyRef Name="id_horario" />
+    </Key>
+    <Property Name="id_horario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Comprobante" Type="nvarchar" MaxLength="255" />
+    <Property Name="id_empleado" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="date" />
+    <Property Name="Periodo" Type="int" />
+  </EntityType>
+  <EntityType Name="Jornada">
+    <Key>
+      <PropertyRef Name="id_jornada" />
+    </Key>
+    <Property Name="id_jornada" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Jornada" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Motivo_Asistencia">
+    <Key>
+      <PropertyRef Name="idMotivo_Asistencia" />
+    </Key>
+    <Property Name="idMotivo_Asistencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Motivo" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Reporte_Asistencia">
+    <Key>
+      <PropertyRef Name="id_asistencia" />
+    </Key>
+    <Property Name="id_asistencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Comprobante" Type="nvarchar" MaxLength="255" />
+    <Property Name="id_empleado" Type="int" Nullable="false" />
+    <Property Name="idMotivo_Asistencia" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="date" />
+    <Property Name="Periodo" Type="int" />
+  </EntityType>
+  <EntityType Name="Sueldo">
+    <Key>
+      <PropertyRef Name="idSueldo" />
+    </Key>
+    <Property Name="idSueldo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_cargo" Type="int" Nullable="false" />
+    <Property Name="Sueldo" Type="float" />
+  </EntityType>
+  <EntityType Name="Utilidades">
+    <Key>
+      <PropertyRef Name="id_utilidades" />
+    </Key>
+    <Property Name="id_utilidades" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Comprobante" Type="nvarchar" MaxLength="255" />
+    <Property Name="id_empleado" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="date" />
+    <Property Name="Valor_Utilidades" Type="float" />
+    <Property Name="Fecha_pago" Type="date" />
+    <Property Name="Anio" Type="int" />
+  </EntityType>
+  <Association Name="FK__Cabecera___id_em__33D4B598">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="Cabecera_Nomina" Type="Self.Cabecera_Nomina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="id_empleado" />
+      </Principal>
+      <Dependent Role="Cabecera_Nomina">
+        <PropertyRef Name="id_empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cabecera___idSue__34C8D9D1">
+    <End Role="Sueldo" Type="Self.Sueldo" Multiplicity="1" />
+    <End Role="Cabecera_Nomina" Type="Self.Cabecera_Nomina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sueldo">
+        <PropertyRef Name="idSueldo" />
+      </Principal>
+      <Dependent Role="Cabecera_Nomina">
+        <PropertyRef Name="idSueldo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Departame__id_ca__267ABA7A">
+    <End Role="Cargo" Type="Self.Cargo" Multiplicity="1" />
+    <End Role="Departamento" Type="Self.Departamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargo">
+        <PropertyRef Name="id_cargo" />
+      </Principal>
+      <Dependent Role="Departamento">
+        <PropertyRef Name="id_cargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Det_Asist__id_as__45F365D3">
+    <End Role="Reporte_Asistencia" Type="Self.Reporte_Asistencia" Multiplicity="1" />
+    <End Role="Det_Asistencia" Type="Self.Det_Asistencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reporte_Asistencia">
+        <PropertyRef Name="id_asistencia" />
+      </Principal>
+      <Dependent Role="Det_Asistencia">
+        <PropertyRef Name="id_asistencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Det_Horar__id_ho__3E52440B">
+    <End Role="Horario" Type="Self.Horario" Multiplicity="1" />
+    <End Role="Det_Horario" Type="Self.Det_Horario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Horario">
+        <PropertyRef Name="id_horario" />
+      </Principal>
+      <Dependent Role="Det_Horario">
+        <PropertyRef Name="id_horario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Det_Horar__id_jo__3F466844">
+    <End Role="Jornada" Type="Self.Jornada" Multiplicity="1" />
+    <End Role="Det_Horario" Type="Self.Det_Horario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jornada">
+        <PropertyRef Name="id_jornada" />
+      </Principal>
+      <Dependent Role="Det_Horario">
+        <PropertyRef Name="id_jornada" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Det_Utili__id_ut__4BAC3F29">
+    <End Role="Utilidades" Type="Self.Utilidades" Multiplicity="1" />
+    <End Role="Det_Utilidades" Type="Self.Det_Utilidades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilidades">
+        <PropertyRef Name="id_utilidades" />
+      </Principal>
+      <Dependent Role="Det_Utilidades">
+        <PropertyRef Name="id_utilidades" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DETALLE_N__id_em__38996AB5">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="DETALLE_NOMINA" Type="Self.DETALLE_NOMINA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="id_empleado" />
+      </Principal>
+      <Dependent Role="DETALLE_NOMINA">
+        <PropertyRef Name="id_empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DETALLE_N__id_No__37A5467C">
+    <End Role="Cabecera_Nomina" Type="Self.Cabecera_Nomina" Multiplicity="1" />
+    <End Role="DETALLE_NOMINA" Type="Self.DETALLE_NOMINA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cabecera_Nomina">
+        <PropertyRef Name="id_Nomina" />
+      </Principal>
+      <Dependent Role="DETALLE_NOMINA">
+        <PropertyRef Name="id_Nomina" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Empleado__id_car__29572725">
+    <End Role="Cargo" Type="Self.Cargo" Multiplicity="1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargo">
+        <PropertyRef Name="id_cargo" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="id_cargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Empleado__idDepa__2A4B4B5E">
+    <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamento">
+        <PropertyRef Name="idDepartamento" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="idDepartamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Horario__id_empl__3B75D760">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="Horario" Type="Self.Horario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="id_empleado" />
+      </Principal>
+      <Dependent Role="Horario">
+        <PropertyRef Name="id_empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reporte_A__id_em__4222D4EF">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="Reporte_Asistencia" Type="Self.Reporte_Asistencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="id_empleado" />
+      </Principal>
+      <Dependent Role="Reporte_Asistencia">
+        <PropertyRef Name="id_empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reporte_A__idMot__4316F928">
+    <End Role="Motivo_Asistencia" Type="Self.Motivo_Asistencia" Multiplicity="1" />
+    <End Role="Reporte_Asistencia" Type="Self.Reporte_Asistencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Motivo_Asistencia">
+        <PropertyRef Name="idMotivo_Asistencia" />
+      </Principal>
+      <Dependent Role="Reporte_Asistencia">
+        <PropertyRef Name="idMotivo_Asistencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sueldo__id_cargo__2D27B809">
+    <End Role="Cargo" Type="Self.Cargo" Multiplicity="1" />
+    <End Role="Sueldo" Type="Self.Sueldo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargo">
+        <PropertyRef Name="id_cargo" />
+      </Principal>
+      <Dependent Role="Sueldo">
+        <PropertyRef Name="id_cargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Utilidade__id_em__48CFD27E">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="Utilidades" Type="Self.Utilidades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="id_empleado" />
+      </Principal>
+      <Dependent Role="Utilidades">
+        <PropertyRef Name="id_empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AgripacModelStoreContainer">
+    <EntitySet Name="Cabecera_Nomina" EntityType="Self.Cabecera_Nomina" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cargo" EntityType="Self.Cargo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departamento" EntityType="Self.Departamento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Det_Asistencia" EntityType="Self.Det_Asistencia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Det_Horario" EntityType="Self.Det_Horario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Det_Utilidades" EntityType="Self.Det_Utilidades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DETALLE_NOMINA" EntityType="Self.DETALLE_NOMINA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Horario" EntityType="Self.Horario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Jornada" EntityType="Self.Jornada" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Motivo_Asistencia" EntityType="Self.Motivo_Asistencia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reporte_Asistencia" EntityType="Self.Reporte_Asistencia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sueldo" EntityType="Self.Sueldo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Utilidades" EntityType="Self.Utilidades" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Cabecera___id_em__33D4B598" Association="Self.FK__Cabecera___id_em__33D4B598">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Cabecera_Nomina" EntitySet="Cabecera_Nomina" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cabecera___idSue__34C8D9D1" Association="Self.FK__Cabecera___idSue__34C8D9D1">
+      <End Role="Sueldo" EntitySet="Sueldo" />
+      <End Role="Cabecera_Nomina" EntitySet="Cabecera_Nomina" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Departame__id_ca__267ABA7A" Association="Self.FK__Departame__id_ca__267ABA7A">
+      <End Role="Cargo" EntitySet="Cargo" />
+      <End Role="Departamento" EntitySet="Departamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Det_Asist__id_as__45F365D3" Association="Self.FK__Det_Asist__id_as__45F365D3">
+      <End Role="Reporte_Asistencia" EntitySet="Reporte_Asistencia" />
+      <End Role="Det_Asistencia" EntitySet="Det_Asistencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Det_Horar__id_ho__3E52440B" Association="Self.FK__Det_Horar__id_ho__3E52440B">
+      <End Role="Horario" EntitySet="Horario" />
+      <End Role="Det_Horario" EntitySet="Det_Horario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Det_Horar__id_jo__3F466844" Association="Self.FK__Det_Horar__id_jo__3F466844">
+      <End Role="Jornada" EntitySet="Jornada" />
+      <End Role="Det_Horario" EntitySet="Det_Horario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Det_Utili__id_ut__4BAC3F29" Association="Self.FK__Det_Utili__id_ut__4BAC3F29">
+      <End Role="Utilidades" EntitySet="Utilidades" />
+      <End Role="Det_Utilidades" EntitySet="Det_Utilidades" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DETALLE_N__id_em__38996AB5" Association="Self.FK__DETALLE_N__id_em__38996AB5">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="DETALLE_NOMINA" EntitySet="DETALLE_NOMINA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DETALLE_N__id_No__37A5467C" Association="Self.FK__DETALLE_N__id_No__37A5467C">
+      <End Role="Cabecera_Nomina" EntitySet="Cabecera_Nomina" />
+      <End Role="DETALLE_NOMINA" EntitySet="DETALLE_NOMINA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Empleado__id_car__29572725" Association="Self.FK__Empleado__id_car__29572725">
+      <End Role="Cargo" EntitySet="Cargo" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Empleado__idDepa__2A4B4B5E" Association="Self.FK__Empleado__idDepa__2A4B4B5E">
+      <End Role="Departamento" EntitySet="Departamento" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Horario__id_empl__3B75D760" Association="Self.FK__Horario__id_empl__3B75D760">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Horario" EntitySet="Horario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reporte_A__id_em__4222D4EF" Association="Self.FK__Reporte_A__id_em__4222D4EF">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Reporte_Asistencia" EntitySet="Reporte_Asistencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reporte_A__idMot__4316F928" Association="Self.FK__Reporte_A__idMot__4316F928">
+      <End Role="Motivo_Asistencia" EntitySet="Motivo_Asistencia" />
+      <End Role="Reporte_Asistencia" EntitySet="Reporte_Asistencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sueldo__id_cargo__2D27B809" Association="Self.FK__Sueldo__id_cargo__2D27B809">
+      <End Role="Cargo" EntitySet="Cargo" />
+      <End Role="Sueldo" EntitySet="Sueldo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Utilidade__id_em__48CFD27E" Association="Self.FK__Utilidade__id_em__48CFD27E">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Utilidades" EntitySet="Utilidades" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,58 @@
+﻿@model Pagina_Agripac.Reporte_Asistencia
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Consulta de Asistencia</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Comprobante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comprobante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Periodo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Periodo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleado.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleado.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Motivo_Asistencia.Motivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Motivo_Asistencia.Motivo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id_asistencia }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>
+

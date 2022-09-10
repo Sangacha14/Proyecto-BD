@@ -1,0 +1,32 @@
+﻿@model Pagina_Agripac.Motivo_Asistencia
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar Registro Motivo de Inasistencia</h2>
+
+<h3>Estas seguro que deseas eliminar este registro?</h3>
+<div>
+    <h4>Motivo_Asistencia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Motivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Motivo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar", "Index")
+        </div>
+    }
+</div>

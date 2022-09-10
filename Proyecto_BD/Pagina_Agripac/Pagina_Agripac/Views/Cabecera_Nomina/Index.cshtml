@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Pagina_Agripac.Cabecera_Nomina>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Nomina</h2>
+<p>
+    @Html.ActionLink("Crear Cargo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Comprobante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Iess_por)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Periodo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleado.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sueldo.idSueldo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comprobante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Iess_por)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Periodo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Empleado.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sueldo.idSueldo)
+            </td>
+            <td>
+                @Html.ActionLink("✏", "Edit", new { id = item.id_Nomina }) |
+                @Html.ActionLink("👀", "Details", new { id = item.id_Nomina }) |
+                @Html.ActionLink("❌", "Delete", new { id = item.id_Nomina })
+            </td>
+        </tr>
+    }
+
+</table>
+

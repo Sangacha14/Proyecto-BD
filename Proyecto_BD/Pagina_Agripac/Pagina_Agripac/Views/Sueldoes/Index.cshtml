@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Pagina_Agripac.Sueldo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Sueldo</h2>
+
+<p>
+    @Html.ActionLink("Crear Registro", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Sueldo1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cargo.Cargo1)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sueldo1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cargo.Cargo1)
+        </td>
+        <td>
+            @Html.ActionLink("✏", "Edit", new { id=item.idSueldo }) |
+            @Html.ActionLink("👀", "Details", new { id=item.idSueldo }) |
+            @Html.ActionLink("❌", "Delete", new { id=item.idSueldo })
+        </td>
+    </tr>
+}
+
+</table>
